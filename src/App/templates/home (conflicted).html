@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        header{
+            width: 100%;
+            height: 50px;
+            border: 1px solid red;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        body{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            /* justify-content: space-between; */
+            gap: 20px;
+        }
+        section{
+            width: 50%;
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            /* justify-content: center; */
+            /* align-items: center; */
+            overflow-y: scroll;
+        }
+        div{
+            width: 100%;
+            min-height:100px ;
+            border: 1px solid red;
+            display: flex;
+            
+        /* overflow-y:scroll; */
+        }
+
+        div a{
+            visibility: hidden;
+        }
+        div:hover a{
+            visibility: visible;
+        }
+        
+    </style>
+</head>
+<header>
+    <h1>ToDo Lists</h1>
+</header>
+<body>
+    
+    <h2><a href="/add">Add Note</a></h2>
+
+
+
+    <section>
+        {%for m in notes%}
+
+        <div>
+            <!-- {{m.id}} -->
+            <h2>
+                {{m.notetitle}}
+            </h2>
+            <!-- <p>
+                {{m.notedescr}}
+            </p> -->
+            <div>
+                <a href="delete/{{m.id}}">delete</a>
+                <a href="">View</a>
+                <a href="">Edit</a>
+            </div>
+        </div>
+        {%endfor%}
+
+    </section>
+
+   
+
+    
+</body>
+</html>
